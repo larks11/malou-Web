@@ -32,114 +32,116 @@
     <h2>Quick Contact</h2>
 
     <!-- Login Section -->
-    <div class="login-section">
-      <h3>Login</h3>
-      <form id="loginForm">
-        <div class="form-group">
-          <label for="loginUsername">Username:</label>
-          <input type="text" id="loginUsername" name="loginUsername" placeholder="Username" required>
-        </div>
-        <div class="form-group">
-          <label for="loginPassword">Password:</label>
-          <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
-        </div>
-        <button type="submit">Login</button>
-        <p id="loginMessage" class="error"></p>
-      </form>
-      
-      <button id="showCreateAccount">Create Account</button>
-      
-      <!-- Forgot Password Link -->
-      <p><a href="#" id="forgotPasswordLink">Forgot Password?</a></p>
+<div class="login-section">
+  <h3>Login</h3>
+  <form id="loginForm" action="connect.php" method="post">
+    <div class="form-group">
+      <label for="loginUsername">Username:</label>
+      <input type="text" id="loginUsername" name="loginUsername" placeholder="Username" required>
     </div>
+    <div class="form-group">
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
+    </div>
+    <button type="submit">Login</button>
+    <p id="loginMessage" class="error"></p>
+  </form>
+  
+  <button id="showCreateAccount">Create Account</button>
+  
+  <!-- Forgot Password Link -->
+  <p><a href="#" id="forgotPasswordLink">Forgot Password?</a></p>
+</div>
 
-    <!-- Create Account Section -->
-    <div class="create-account-section" style="display: none;">
-      <h3>Create Account</h3>
-      <form id="createAccountForm">
-        <div class="form-group">
-          <label for="createUsername">Username:</label>
-          <input type="text" id="createUsername" name="createUsername" placeholder="Username" required>
-        </div>
-        <div class="form-group">
-          <label for="createPassword">Password:</label>
-          <input type="password" id="createPassword" name="createPassword" placeholder="Password" required>
-        </div>
-        <div class="form-group">
-          <label for="createPhone">Phone Number:</label>
-          <input type="tel" id="createPhone" name="createPhone" placeholder="Phone Number" required>
-        </div>
-        <div class="form-group">
-          <label for="createCategory">Category:</label>
-          <select id="createCategory" name="createCategory" required>
-            <option value="family">Family</option>
-            <option value="friends">Friends</option>
-            <option value="work">Work</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <button type="submit">Create Account</button>
-        <p id="accountMessage" class="error"></p>
-      </form>
+
+   <!-- Create Account Section -->
+<div class="create-account-section" style="display: none;">
+  <h3>Create Account</h3>
+  <form id="createAccountForm" action="connect.php" method="post">
+    <div class="form-group">
+      <label for="createUsername">Username:</label>
+      <input type="text" id="createUsername" name="createUsername" placeholder="Username" required>
     </div>
+    <div class="form-group">
+      <label for="createPassword">Password:</label>
+      <input type="password" id="createPassword" name="createPassword" placeholder="Password" required>
+    </div>
+    <div class="form-group">
+      <label for="createPhone">Phone Number:</label>
+      <input type="tel" id="createPhone" name="createPhone" placeholder="Phone Number" required>
+    </div>
+    <div class="form-group">
+      <label for="createCategory">Category:</label>
+      <select id="createCategory" name="createCategory" required>
+        <option value="family">Family</option>
+        <option value="friends">Friends</option>
+        <option value="work">Work</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <button type="submit">Create Account</button>
+    <p id="accountMessage" class="error"></p>
+  </form>
+</div>
 
     <!-- Contact List Section -->
-    <div class="contact-section" style="display: none;">
-      <h3>Your Contacts</h3>
-      
-      <!-- Log Out Button -->
-      <button id="logoutButton" style="margin-left: 10px; background-color: #dc3545; color: white;">Log Out</button>
+<div class="contact-section" style="display: none;">
+  <h3>Your Contacts</h3>
+  
+  <!-- Log Out Button -->
+  <button id="logoutButton" style="margin-left: 10px; background-color: #dc3545; color: white;">Log Out</button>
 
-      <!-- Search Contacts -->
-      <div class="form-group">
-        <label for="searchContacts">Search Contacts:</label>
-        <input type="text" id="searchContacts" placeholder="Search by name or category">
-        <button id="searchButton" onclick="filterContacts()">Search</button>
-      </div>
-
-      <!-- Add Contact Form -->
-      <form id="addContactForm">
-        <div class="form-group">
-          <label for="contactName">Name:</label>
-          <input type="text" id="contactName" placeholder="Name" required>
-        </div>
-        <div class="form-group">
-          <label for="contactPhone">Phone Number:</label>
-          <input type="tel" id="contactPhone" placeholder="Phone Number" required>
-        </div>
-        <div class="form-group">
-          <label for="contactCategory">Category:</label>
-          <select id="contactCategory" required>
-            <option value="family">Family</option>
-            <option value="friends">Friends</option>
-            <option value="work">Work</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <button type="submit">Add Contact</button>
-      </form>
-      
-      <!-- Contacts List -->
-      <ul id="contactList" class="contact-list"></ul>
-      
-      <div class="message-section">
-        <h4>Send a Message</h4>
-        <form id="messageForm">
-          <div class="form-group">
-            <label for="recipientUsername">Recipient Username:</label>
-            <input type="text" id="recipientUsername" name="recipientUsername" placeholder="Username of recipient" required>
-          </div>
-          <div class="form-group">
-            <label for="messageText">Message:</label>
-            <textarea id="messageText" name="messageText" placeholder="Write your message..." required></textarea>
-          </div>
-          <button type="submit">Send Message</button>
-        </form>
-
-        <div class="message-box" id="messageBox"></div>
-      </div>
-    </div>
+  <!-- Search Contacts -->
+  <div class="form-group">
+    <label for="searchContacts">Search Contacts:</label>
+    <input type="text" id="searchContacts" placeholder="Search by name or category">
+    <button id="searchButton" onclick="filterContacts()">Search</button>
   </div>
+
+  <!-- Add Contact Form -->
+  <form id="addContactForm">
+    <div class="form-group">
+      <label for="contactName">Name:</label>
+      <input type="text" id="contactName" placeholder="Name" required>
+    </div>
+    <div class="form-group">
+      <label for="contactPhone">Phone Number:</label>
+      <input type="tel" id="contactPhone" placeholder="Phone Number" required>
+    </div>
+    <div class="form-group">
+      <label for="contactCategory">Category:</label>
+      <select id="contactCategory" required>
+        <option value="family">Family</option>
+        <option value="friends">Friends</option>
+        <option value="work">Work</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <button type="submit">Add Contact</button>
+  </form>
+  
+  <!-- Contacts List -->
+  <ul id="contactList" class="contact-list"></ul>
+  
+  <!-- Message Section -->
+  <div class="message-section">
+    <h4>Send a Message</h4>
+    <form id="messageForm">
+      <div class="form-group">
+        <label for="recipientUsername">Recipient Username:</label>
+        <input type="text" id="recipientUsername" name="recipientUsername" placeholder="Username of recipient" required>
+      </div>
+      <div class="form-group">
+        <label for="messageText">Message:</label>
+        <textarea id="messageText" name="messageText" placeholder="Write your message..." required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="message-box" id="messageBox"></div>
+  </div>
+</div>
+
 
   <!-- Popup Modal -->
   <div class="popup" id="contactPopup">
